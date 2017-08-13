@@ -1,0 +1,1 @@
+c:\progra~1\micros~4\vc\bin\cl -I%JAVA_HOME%\include -I%JAVA_HOME%\include\win32 -Ic:\progra~1\micros~4\vc\include -TP -MD MainJNIImpl.cpp -Fedatefile.dll /link c:\progra~1\micros~4\vc\lib\uuid.lib c:\progra~1\micros~4\vc\lib\msvcrt.lib c:\progra~1\micros~4\vc\lib\oldnames.lib c:\progra~1\micros~4\vc\lib\kernel32.lib

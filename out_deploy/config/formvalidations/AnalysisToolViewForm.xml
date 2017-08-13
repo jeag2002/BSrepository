@@ -1,0 +1,36 @@
+<!DOCTYPE form-validation PUBLIC
+     "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1//EN"
+     "http://jakarta.apache.org/commons/dtds/validator_1_1.dtd">
+
+<form-validation>
+   <global>
+       <validator name="required"
+          classname="com.bs.analysis.cashanalysistool.gui.validator.GenericBeanValidator"
+          method="validateRequired"
+          methodParams="java.lang.Object, org.apache.commons.validator.Field"
+          msg="required.field"/>
+
+       <validator name="time"
+          classname="com.bs.analysis.cashanalysistool.gui.validator.GenericBeanValidator"
+          method="validateTime"
+          methodParams="java.lang.Object, org.apache.commons.validator.Field"
+          msg="invalid.time"/>
+    </global>
+    
+    <formset>
+       <form name="AnalysisToolView">
+          <field property="folderpath" depends="required">
+              <arg0 key="AnalysisToolView.folderpath.displayname"/>
+          </field>
+           
+           <field property="dateini" depends="required,time">
+               <arg0 key="AnalysisToolView.dateini.displayname"/>
+           </field>
+           
+           <field property="datefin" depends="time">
+               <arg0 key="AnalysisToolView.datefin.displayname"/>
+           </field>
+       </form>
+    </formset>
+    
+</form-validation>

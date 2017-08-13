@@ -1,0 +1,236 @@
+<!-- Reglas de análisis  -->
+<samplingConfig>
+	<samplingOpe>
+		<operation id="MOVIL">
+			<traza>\sCDBBloc\s\[AT2000_BLOPERTELEF\].START\sinitialize$</traza>
+		</operation>
+		
+		<operation id="EFECTIVO">
+			<traza>\sBegin\sOpe_AT2100_tex_TE_InicioOperacion.process\(\)</traza>
+		</operation>
+		
+		<operation id="CONSULTA_SALDO">
+			<traza>\sBegin\sOpe_AT2200_tex_TE_IniciOperacion.process\(\)</traza>
+		</operation>
+		
+		<operation id="MOVIMIENTOS">
+			<traza>\sBegin\sOpe_AT2300_tex_TE_IncioOpe.process\(\)</traza>
+		</operation>
+		
+		<operation id="TRANSFERENCIAS">
+			<traza>\sBegin\sOpe_AT2400_tex_TE_InicioOperacion.process\(\)</traza>
+		</operation>
+		
+		<operation id="DEPOSITO_EFECTIVO_CHEQUES">
+			<traza>\sBegin\sOpe_AT2500_tex_TE_IniciOperacion.process\(\)</traza>
+		</operation>
+		
+		<operation id="CAMBIO_PIN">
+			<traza>\sCDBBloc\s\[AT2600_BLCAPTPIN\].START\sinitialize$</traza>
+		</operation>
+		
+		<operation id="CAMBIO_IDIOMA">
+			<traza>\sBegin\sOpe_AT2700_tex_TE_InicioOpe.process\(\)</traza>
+		</operation>
+	</samplingOpe>
+	
+	<samplingActions>
+		
+		<sampling id="ejecutandoAutoservicio">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.ejecutandoAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+		
+		<sampling id="leeActivAutoservicio">
+			<base></base>
+			<ini>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.leeActivAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\sIN$</ini>
+			<fin>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.leeActivAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\sOUT$</fin>
+		</sampling>
+	
+		<sampling id="MediaInserted-(FIN)leeActivAutoservicio" >
+			<base></base>
+			<ini>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.checkMediaInsertedAfterLee\[([L:0-9]+)\]\s.\s\s--> \[STATE=OPERATING\]\s\shay activador\?\strue</ini>
+			<fin>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.leeActivAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\sOUT$</fin>
+		</sampling>
+    
+    	<sampling id="BLMASOPER_TEX_TE_SI-(INI)cancelPINPADAutoservicio" >
+			<base></base>
+			<ini>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|_\[\]]+)\s\s.\s-->\sBegin\sOpe_AT0000_blc_BLMASOPER_tex_TE_SI.process\(\)$</ini>
+			<fin>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.cancelPINPADAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\sIN$</fin>
+		</sampling>    
+        
+    	<sampling id="cancelPINPADAutoservicio">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.cancelPINPADAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+   
+  	  <sampling id="diarioAutoservicio">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.diarioAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+	
+    	<sampling id="activPINPADAutoservicio">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.activPINPADAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+
+		<sampling id="keepAliveMDCS">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.keepAliveMDCS\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>END$</fin>
+		</sampling>
+	
+	
+		<sampling id="pinblockAutoservicio">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.pinblockAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+					
+		<sampling id="estadoAutoservicio">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.estadoAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+	
+		<sampling id="reiniciarAutoservicio">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.reiniciarAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+	
+		<sampling id="actualizaCajAutoservicio">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.actualizaCajAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+	
+	
+		<sampling id="registerAutoCashDispenEventMDCS">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.registerAutoCashDispenEventMDCS\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+	
+	
+		<sampling id="actualizaEbAutoservicio">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.actualizaEbAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+	
+		<sampling id="aControlEbranchAutoservicio">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.aControlEbranchAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+			
+		<sampling id="AT0000_BLMENSACTIV">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT0000_BLMENSACTIV\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT0000_BLMENSACTIV\].FINNISHED$</fin>
+		</sampling>
+		
+		<sampling id="AT0000_BLPIN">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT0000_BLPIN\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT0000_BLPIN\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="AT0000_BLSELOPE">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT0000_BLSELOPE\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT0000_BLSELOPE\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="AT0000_BLMASOPER">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT0000_BLMASOPER\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT0000_BLMASOPER\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="AT0000_BLENV">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT0000_BLENV\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT0000_BLENV\].FINNISHED$</fin>
+		</sampling>
+		
+		<sampling id="AT0000_BLSELREBU">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT0000_BLSELREBU\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT0000_BLSELREBU\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="AT0000_BLENTBILL">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT0000_BLENTBILL\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT0000_BLENTBILL\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="AT0000_BLADIOS">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT0000_BLADIOS\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT0000_BLADIOS\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="AT2000_BLOPERTELEF">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT2000_BLOPERTELEF\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT2000_BLOPERTELEF\].FINNISHED$</fin>
+		</sampling>
+	
+	
+		<sampling id="AT2100_BLIMPFIJ">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT2100_BLIMPFIJ\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT2100_BLIMPFIJ\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="AT2100_BLCONFIMP">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT2100_BLCONFIMP\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT2100_BLCONFIMP\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="AT2200_BLREDISP">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT2200_BLREDISP\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT2200_BLREDISP\].FINNISHED$</fin>
+		</sampling>
+
+		<sampling id="AT2300_BLREBDISP">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT2300_BLREBDISP\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT2300_BLREBDISP\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="AT2400_BLCAPTCTA">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT2400_BLCAPTCTA\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT2400_BLCAPTCTA\].FINNISHED$</fin>
+		</sampling>
+	
+	
+		<sampling id="AT2500_BLSELTIPING">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT2500_BLSELTIPING\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT2500_BLSELTIPING\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="AT2600_BLCAPTPIN">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT2600_BLCAPTPIN\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT2600_BLCAPTPIN\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="AT2700_BLCAPTIDIOMA">
+			<base>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW</base>
+			<ini>\sCDBBloc\s\[AT2700_BLCAPTIDIOMA\].START\sinitialize$</ini>
+			<fin>:\sCDBBloc\[AT2700_BLCAPTIDIOMA\].FINNISHED$</fin>
+		</sampling>
+	</samplingActions>		
+</samplingConfig>

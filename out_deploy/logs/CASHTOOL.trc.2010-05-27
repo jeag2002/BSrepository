@@ -1,0 +1,50 @@
+[27 may 2010 13:44:00,585] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:65] --> ######################################################
+ [27 may 2010 13:44:00,585] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:66] -->                                                       
+ [27 may 2010 13:44:00,585] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:67] -->            BEGIN CASHANALYSISTOOL PROCESS             
+ [27 may 2010 13:44:00,585] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:68] -->                                                       
+ [27 may 2010 13:44:00,585] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:69] --> ######################################################
+ [27 may 2010 13:46:08,723] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:65] --> ######################################################
+ [27 may 2010 13:46:08,723] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:66] -->                                                       
+ [27 may 2010 13:46:08,723] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:67] -->            BEGIN CASHANALYSISTOOL PROCESS             
+ [27 may 2010 13:46:08,738] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:68] -->                                                       
+ [27 may 2010 13:46:08,738] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:69] --> ######################################################
+ [27 may 2010 13:46:59,721] |INFO| com.bs.analysis.cashanalysistool.gui.view.AnalysisToolView.cancelButtonActionPerformed[L:643] -->          END CASHANALYSISTOOL PROCESS         
+ [27 may 2010 13:47:04,190] |INFO| com.bs.analysis.cashanalysistool.gui.view.AnalysisToolView.finishButtonActionPerformed[L:655] -->          END CASHANALYSISTOOL PROCESS         
+ [27 may 2010 13:57:42,091] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:65] --> ######################################################
+ [27 may 2010 13:57:42,106] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:66] -->                                                       
+ [27 may 2010 13:57:42,106] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:67] -->            BEGIN CASHANALYSISTOOL PROCESS             
+ [27 may 2010 13:57:42,106] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:68] -->                                                       
+ [27 may 2010 13:57:42,106] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:69] --> ######################################################
+ [27 may 2010 13:58:13,280] |INFO| com.bs.analysis.cashanalysistool.gui.view.AnalysisToolView.finishButtonActionPerformed[L:655] -->          END CASHANALYSISTOOL PROCESS         
+ [27 may 2010 15:29:55,052] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:65] --> ######################################################
+ [27 may 2010 15:29:55,052] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:66] -->                                                       
+ [27 may 2010 15:29:55,052] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:67] -->            BEGIN CASHANALYSISTOOL PROCESS             
+ [27 may 2010 15:29:55,068] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:68] -->                                                       
+ [27 may 2010 15:29:55,068] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:69] --> ######################################################
+ [27 may 2010 15:30:35,254] |INFO| com.bs.analysis.cashanalysistool.gui.model.ATVController.Submit[L:77] --> Submit data  mod1 = (
+folderpath = C:\mvfslogs
+dateini = 27/05/2010 00:00:00
+datefin = 27/05/2010 23:59:59
+dateinterval = HOY
+inputformat = PRODDETALLE
+outputformat = CONSOLA
+outputpath = .\out\output.csv
+outputoptions = CONFIG
+outputdateoptions = DATE) to AE driver
+ [27 may 2010 15:30:35,286] |INFO| com.bs.analysis.cashanalysistool.driver.CashAnalysisTool.processInformation[L:781] --> CashAnalysisTool-Core Process begins
+ [27 may 2010 15:30:35,348] |INFO| com.bs.analysis.cashanalysistool.driver.CashAnalysisTool.processInformation[L:792] --> path_action ./config/standardprodDANI.xml config_id 1
+ [27 may 2010 15:30:35,379] |ERROR| com.bs.analysis.cashanalysistool.driver.CashAnalysisTool.processFile[L:872] --> Error to process the files no protocol: ./config/standardsys.xml
+ java.net.MalformedURLException: no protocol: ./config/standardsys.xml
+	at java.net.URL.<init>(URL.java:601)
+	at java.net.URL.<init>(URL.java:498)
+	at java.net.URL.<init>(URL.java:447)
+	at org.apache.commons.digester.Digester.createInputSourceFromURL(Digester.java:2092)
+	at org.apache.commons.digester.Digester.parse(Digester.java:1934)
+	at com.bs.analysis.cashanalysistool.driver.CashAnalysisTool.ParseConfigSys(CashAnalysisTool.java:116)
+	at com.bs.analysis.cashanalysistool.driver.CashAnalysisTool.processInformation(CashAnalysisTool.java:795)
+	at com.bs.analysis.cashanalysistool.driver.CashAnalysisTool.processFile(CashAnalysisTool.java:870)
+	at com.bs.analysis.cashanalysistool.ae.processSource.processData(processSource.java:299)
+	at com.bs.analysis.cashanalysistool.ae.processSource.execute(processSource.java:353)
+	at com.bs.analysis.cashanalysistool.ae.processSource.run(processSource.java:364)
+[27 may 2010 15:30:42,801] |INFO| com.bs.analysis.cashanalysistool.gui.view.AnalysisToolView.finishButtonActionPerformed[L:655] -->          END CASHANALYSISTOOL PROCESS         
+ 

@@ -1,0 +1,88 @@
+<samplingConfig>
+
+	<samplingOpe>
+		<operation id="MOVIL">
+			<traza>\sCDBBloc\s\[AT2000_BLOPERTELEF\].START\sinitialize$</traza>
+		</operation>
+		
+		<operation id="EFECTIVO">
+			<traza>\sBegin\sOpe_AT2100_tex_TE_InicioOperacion.process\(\)</traza>
+		</operation>
+		
+		<operation id="CONSULTA_SALDO">
+			<traza>\sBegin\sOpe_AT2200_tex_TE_IniciOperacion.process\(\)</traza>
+		</operation>
+		
+		<operation id="MOVIMIENTOS">
+			<traza>\sBegin\sOpe_AT2300_tex_TE_IncioOpe.process\(\)</traza>
+		</operation>
+		
+		<operation id="TRANSFERENCIAS">
+			<traza>\sBegin\sOpe_AT2400_tex_TE_InicioOperacion.process\(\)</traza>
+		</operation>
+		
+		<operation id="DEPOSITO_EFECTIVO_CHEQUES">
+			<traza>\sCDBBloc\s\[AT2500_BLSELTIPING\].START\sinitialize$</traza>
+		</operation>
+		
+		<operation id="CAMBIO_PIN">
+			<traza>\sCDBBloc\s\[AT2600_BLCAPTPIN\].START\sinitialize$</traza>
+		</operation>
+		
+		<operation id="CAMBIO_IDIOMA">
+			<traza>\sBegin\sOpe_AT2700_tex_TE_InicioOpe.process\(\)</traza>
+		</operation>
+	</samplingOpe>
+
+	<samplingActions>
+		<sampling id="cargaMedios">
+			<base></base>
+			<ini>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.checkMediaInsertedAfterLee\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\shay activador\?\strue</ini>
+			<fin>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW\sCDBBloc\s\[AT0000_BLMENSACTIV\].START\sinitialize$</fin>
+		</sampling>
+	
+		<sampling id="introduccionPIN">
+			<base></base>
+			<ini>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW\sCDBBloc\s\[AT0000_BLPIN\].START\sinitialize$</ini>
+			<fin>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW:\sCDBBloc\[AT0000_BLPIN\].FINNISHED$</fin>
+		</sampling>
+
+		<sampling id="eleccionOpe">
+			<base></base>
+			<ini>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW\sCDBBloc\s\[AT0000_BLSELOPE\].START\sinitialize$</ini>
+			<fin>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW:\sCDBBloc\[AT0000_BLSELOPE\].FINNISHED$</fin>
+		</sampling>
+
+		<sampling id="ProcesaOpeParticular">
+			<base></base>
+			<ini>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW:\sCDBBloc\[AT0000_BLSELOPE\].FINNISHED$</ini>
+			<fin>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.diarioAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\sOUT$</fin>
+		</sampling>
+	
+	
+		<sampling id="Recibo">
+			<base></base>
+			<ini>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW\sCDBBloc\s\[AT0000_BLSELREBU\].START\sinitialize$</ini>
+			<fin>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW:\sCDBBloc\[AT0000_BLSELREBU\].FINNISHED$</fin>
+		</sampling>
+	
+    	<sampling id="entregaEfectivo">
+			<base></base>
+			<ini>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW\sCDBBloc\s\[AT0000_BLENTBILL\].START\sinitialize$</ini>
+			<fin>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW:\sCDBBloc\[AT0000_BLENTBILL\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="masOpe">
+			<base></base>
+			<ini>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW\sCDBBloc\s\[AT0000_BLMASOPER\].START\sinitialize$</ini>
+			<fin>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW:\sCDBBloc\[AT0000_BLMASOPER\].FINNISHED$</fin>
+		</sampling>
+	
+		<sampling id="finOperacion">
+			<base></base>
+			<ini>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW\sCDBBloc\s\[AT0000_BLADIOS\].START\sinitialize$</ini>
+			<fin>\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|\[\]]+)\s...--> FLOW:\sCDBBloc\[AT0000_BLADIOS\].FINNISHED$</fin>
+		</sampling>
+		
+	</samplingActions>
+</samplingConfig>

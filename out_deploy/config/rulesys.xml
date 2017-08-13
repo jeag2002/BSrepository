@@ -1,0 +1,43 @@
+<digester-rules>
+   <object-create-rule pattern="tracesConfig" classname="com.bs.analysis.cashanalysistool.driver.xml.SampleConfigVec" />
+   <pattern value="tracesConfig/Config">
+   		<object-create-rule classname="com.bs.analysis.cashanalysistool.driver.xml.SampleConfig" />
+   			
+   			<pattern value="ini">
+   				<set-properties-rule>
+   					<alias attr-name="id" prop-name="id_ini"/>
+   				</set-properties-rule>	
+   			</pattern>
+   			<call-method-rule pattern="ini" methodname="setIni_pattern" paramcount="0"/>
+   		   			
+   			<pattern value="enc">
+   				<set-properties-rule>
+   					<alias attr-name="id" prop-name="id_enc"/>
+   				</set-properties-rule>
+   			</pattern>
+   			<call-method-rule pattern="enc" methodname="setEnc_pattern" paramcount="0"/>
+   			
+   			<pattern value="finenc">
+   				<set-properties-rule>
+   					<alias attr-name="id" prop-name="id_fin_enc"/>
+   				</set-properties-rule>
+   			</pattern>
+   			<call-method-rule pattern="finenc" methodname="setFin_enc_pattern" paramcount="0"/>
+   			  			
+   			<pattern value="ske">
+   				<set-properties-rule>
+   					<alias attr-name="id" prop-name="id_ske"/>
+   				</set-properties-rule>
+   			</pattern>
+   			<call-method-rule pattern="ske" methodname="setSke_pattern" paramcount="0"/>
+   			
+   			<pattern value="fin">
+   				<set-properties-rule>
+   					<alias attr-name="id" prop-name="id_fin"/>
+   				</set-properties-rule>
+   			</pattern>
+   			<call-method-rule pattern="fin" methodname="setFin_pattern" paramcount="0"/>
+   			
+   		<set-next-rule methodname="addConfigPattern"/>
+   </pattern>
+ </digester-rules>

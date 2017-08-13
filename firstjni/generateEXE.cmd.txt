@@ -1,0 +1,1 @@
+cl -I%JAVA_HOME%\include -I%JAVA_HOME%\include\win32 -Ic:\progra~1\micros~2\vc98\include -TP -MD salida.cpp  /link c:\progra~1\micros~2\vc98\lib\uuid.lib c:\progra~1\micros~2\vc98\lib\msvcrt.lib c:\progra~1\micros~2\vc98\lib\oldnames.lib c:\progra~1\micros~2\vc98\lib\kernel32.lib

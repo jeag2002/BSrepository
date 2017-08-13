@@ -1,0 +1,25 @@
+<tracesConfig>
+	<Config id="DESARROLLO">
+		<ske id="">\[([^\]]+)\]([a-zA-Z0-9.:|_\[\]\(\)\{\}\s\.\u003C\u003E\u0026\$\*]*)-->\s([^\r\n]+)</ske>
+		<ini id="TrazaInicio">\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.checkMediaInsertedAfterLee\[([L:0-9]+)\]\s.\s\s--> \[STATE=OPERATING\]\s\shay activador\?\strue</ini>
+		<enc id="TrazaEnc">\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|_\[\]]+)\s\s.\s-->\sBegin\sOpe_AT0000_blc_BLMASOPER_tex_TE_SI.process\(\)$</enc>
+		<finenc id="FinTrazaEnc">\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|_\[\]]+)\s\s.\s-->\sBegin\sOpe_AT0000_blc_BLMASOPER_tex_TE_SI.process\(\)$</finenc>
+		<fin id="TrazaFin">\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\sCBSCashDispenserDriver.leeActivAutoservicio\[([L:0-9]+)\]\s\s.\s-->\s\[STATE=OPERATING\]\s\sIN$</fin>		
+	</Config>
+	
+	<Config id="PRODUCCION">
+		<ske id="">\[([^\]]+)\]([a-zA-Z0-9.:|_\[\]\(\)\{\}\s\.\u003C\u003E\u0026\$\*]+)-->\s([^\r\n]+)</ske>
+		<ini id="TrazaInicio">\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.checkMediaInsertedAfterLee\[([L:0-9]+)\]([\s.]+)--> \[STATE=OPERATING\]\s\shay activador\?(.+)</ini>
+		<enc id="TrazaEnc">\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|_\[\]]+)([\s.]+)-->\sBegin\sOpe_AT0000_blc_BLMASOPER_tex_TE_SI.process\(\)$</enc>
+		<finenc id="FinTrazaEnc">\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|_\[\]]+)([\s.]+)-->\sBegin\sOpe_AT0000_blc_BLMASOPER_tex_TE_SI.process\(\)$</finenc>
+		<fin id="TrazaFin">\[([^\]]+)\]\s([A-Z|]+)\sOpe_AT0000_blc_BLESPACTIV_tex_TE_leeActivAutoservicio.process\[([L:0-9]+)\]([\s.]+)-->\sBegin\sOpe_AT0000_blc_BLESPACTIV_tex_TE_leeActivAutoservicio.process\(\)$</fin>
+	</Config>
+	
+	<Config id="GENERAL">
+		<ske id="">\[([^\]]+)\]\s[a-zA-Z0-9.:|]+\s([a-zA-Z0-9.:|_\[\]]+)\s\s.\s--> \[STATE=OPERATING\]\s\s(IN$|OUT$)</ske>
+		<ini id="TrazaInicio">BOF</ini>
+		<enc id="TrazaEnc">NO_TRACE</enc>
+		<finenc id="FinTrazaEnc">NO_TRACE</finenc>
+		<fin id="TrazaFin">EOF</fin>
+	</Config>
+</tracesConfig>

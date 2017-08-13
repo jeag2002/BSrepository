@@ -1,0 +1,48 @@
+#include <jni.h>
+#include <stdio.h>
+#include <windows.h>
+#include <tchar.h>
+#include "MainJNI.h"
+
+/*
+ * Class:     MainJNI
+ * Method:    getDateCreationFile
+ * Signature: (Ljava/lang/String;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_MainJNI_getDateCreationFile(JNIEnv *env, jobject c, jstring s){
+
+    FILETIME ftCreate, ftAccess, ftWrite;
+    SYSTEMTIME stUTC, stLocal;
+    DWORD dwRet;
+    HANDLE hFile;
+    LPTSTR AcctName;
+    const char *strOut; 
+    DWORD dwAcctName = 1;
+     	
+	//obtiene el parametro de entrada
+	const char *str = (env)->GetStringUTFChars(s, 0);
+	
+	AcctName = (char *)GlobalAlloc(GMEM_FIXED, dwAcctName);
+
+	//asocia un canal al fichero de entrada	
+	hFile = CreateFile(str, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    
+	
+	if (hFile == INVALID_HANDLE_VALUE) {
+	   _tprintf("Error al intentar abrir el fichero");		
+	   return NULL;
+	}
+
+	//obtiene la fecha de creacion del fichero 
+	if (GetFileTime(hFile, &ftCreate, &ftAccess, &ftWrite)){
+		FileTimeToSystemTime(&ftCreate, &stUTC);
+		SystemTimeToTzSpecificLocalTime(NULL, &stUTC, &stLocal);
+		sprintf(AcctName,"%02d/%02d/%d  %02d:%02d:%02d", stLocal.wDay, stLocal.wMonth, stLocal.wYear, stLocal.wHour, stLocal.wMinute, stLocal.wSecond);
+	}else{
+		_tprintf("error a la hora de cargar las fechas");
+		return NULL;
+	}
+
+	//devuelve el tiempo de creacion
+	return (env)->NewStringUTF(AcctName);
+}

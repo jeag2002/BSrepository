@@ -1,0 +1,29 @@
+[01 jun 2010 17:43:29,916] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:65] --> ######################################################
+ [01 jun 2010 17:43:29,916] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:66] -->                                                       
+ [01 jun 2010 17:43:29,916] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:67] -->            BEGIN CASHANALYSISTOOL PROCESS             
+ [01 jun 2010 17:43:29,916] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:68] -->                                                       
+ [01 jun 2010 17:43:29,931] |INFO| com.bs.analysis.cashanalysistool.gui.mainGUI.invokeView[L:69] --> ######################################################
+ [01 jun 2010 17:44:05,853] |INFO| com.bs.analysis.cashanalysistool.gui.model.ATVController.Submit[L:77] --> Submit data  mod1 = (
+folderpath = C:\Documents and Settings\E505123\Mis documentos\Documento recuperado.txt
+dateini = 01/06/2010 00:00:00
+datefin = 01/06/2010 23:59:59
+dateinterval = NO
+inputformat = PRODDETALLE
+outputformat = CSV
+outputpath = .\out\output.csv
+outputoptions = NO
+outputdateoptions = ) to AE driver
+ [01 jun 2010 17:44:05,899] |INFO| com.bs.analysis.cashanalysistool.ae.processSource.execute[L:336] --> Process file C:\Documents and Settings\E505123\Mis documentos\Documento recuperado.txt
+ [01 jun 2010 17:44:09,681] |INFO| com.bs.analysis.cashanalysistool.gui.model.ATVController.Submit[L:77] --> Submit data  mod1 = (
+folderpath = C:\Documents and Settings\E505123\Mis documentos\Documento recuperado.txt
+dateini = 01/06/2010 00:00:00
+datefin = 01/06/2010 23:59:59
+dateinterval = NO
+inputformat = PRODDETALLE
+outputformat = CSV
+outputpath = .\out\output.csv
+outputoptions = NO
+outputdateoptions = ) to AE driver
+ [01 jun 2010 17:44:09,728] |INFO| com.bs.analysis.cashanalysistool.ae.processSource.execute[L:336] --> Process file C:\Documents and Settings\E505123\Mis documentos\Documento recuperado.txt
+ [01 jun 2010 17:44:40,415] |INFO| com.bs.analysis.cashanalysistool.gui.view.AnalysisToolView.finishButtonActionPerformed[L:655] -->          END CASHANALYSISTOOL PROCESS         
+ 

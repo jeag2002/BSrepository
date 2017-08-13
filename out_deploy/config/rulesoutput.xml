@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<digester-rules>
+   		<object-create-rule pattern="tracesOutput" classname="com.bs.analysis.cashanalysistool.output.xml.SamplePatternOutVect" />
+   		<pattern value="tracesOutput/operation">
+   			<object-create-rule classname="com.bs.analysis.cashanalysistool.output.xml.SamplePatternOut"/>
+   						
+   						<set-properties-rule>
+   							<alias attr-name="id" prop-name="id"/>
+   							<alias attr-name="type" prop-name="type"/>
+   						</set-properties-rule>
+   						
+   						<pattern value="detalle">
+   									<call-method-rule pattern="paso" methodname="addDetalle" paramcount="0" />
+   						</pattern>
+   						
+   						<pattern value="func">
+   									<call-method-rule pattern="paso" methodname="addFunc" paramcount="0" />
+   						</pattern>
+   			<set-next-rule methodname="addSamplePatternOut"/>
+  	 	</pattern>
+ </digester-rules>

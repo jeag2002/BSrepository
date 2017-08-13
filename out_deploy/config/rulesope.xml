@@ -1,0 +1,12 @@
+5<?xml version="1.0"?>
+<digester-rules>
+   		<object-create-rule pattern="samplingConfig/samplingOpe" classname="com.bs.analysis.cashanalysistool.driver.xml.SamplePatternOpeVect" />
+   		<pattern value="samplingConfig/samplingOpe/operation">
+   			<object-create-rule classname="com.bs.analysis.cashanalysistool.driver.xml.SamplePatternOpe" />
+   						<set-properties-rule>
+   							<alias attr-name="id" prop-name="id"/>
+   						</set-properties-rule>
+   						<call-method-rule pattern="traza" methodname="setTraza" paramcount="0" />
+   			<set-next-rule methodname="addSamplePatternOpe"/>
+  	 	</pattern> 
+ </digester-rules>

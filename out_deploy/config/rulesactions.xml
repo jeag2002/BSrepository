@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<digester-rules>
+   		<object-create-rule pattern="samplingConfig/samplingActions" classname="com.bs.analysis.cashanalysistool.driver.xml.SamplePatternVec" />
+   			<pattern value="samplingConfig/samplingActions/sampling">
+   				<object-create-rule classname="com.bs.analysis.cashanalysistool.driver.xml.SamplePattern" />
+   					<set-properties-rule>
+   						<alias attr-name="id" prop-name="id"/>
+   					</set-properties-rule>
+   					<call-method-rule pattern="base" methodname="setBase" paramcount="0" />
+  					<call-method-rule pattern="ini" methodname="setIni" paramcount="0" />
+   					<call-method-rule pattern="fin" methodname="setFin" paramcount="0" />
+   				<set-next-rule methodname="addSamplePattern"/>
+   			</pattern>
+   			
+ </digester-rules>

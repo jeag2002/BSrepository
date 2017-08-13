@@ -1,0 +1,138 @@
+<tracesOutput>	
+	<!-- definir la traza master EFECTIVO para Excel -->
+	<operation id="EFECTIVO" type="EXCEL">
+		<detalle>
+					<paso id="0">TrazaInicio</paso>
+					<paso id="0">cancelPINPADAutoservicioMDCS</paso>
+					<paso id="0">cancelPINPADAutoservicio</paso>
+					<paso id="0">AT0000_BLMENSACTIV</paso>
+					<paso id="0">activPINPADAutoservicioMDCS</paso>
+					<paso id="0">pinblockAutoservicioMDCS</paso>
+					<paso id="0">pinblockAutoservicio</paso>
+					<paso id="0">cancelPINPADAutoservicioMDCS</paso>
+					<paso id="0">cancelPINPADAutoservicio</paso>
+					<paso id="0">AT0000_BLPIN</paso>
+					<paso id="0">ejecutandoAutoservicio</paso>
+					<paso id="0">AT0000_BLSELOPE</paso>
+					<paso id="0">keepAliveMDCS</paso>
+					<paso id="0">ejecutandoAutoservicio</paso>
+					<paso id="0">activPINPADAutoservicioMDCS</paso>
+					<paso id="0">activPINPADAutoservicio</paso>
+					<paso id="0">cancelPINPADAutoservicioMDCS</paso>
+					<paso id="0">cancelPINPADAutoservicio</paso>
+					<paso id="0">AT0000_BLSELOPE</paso>
+					<paso id="0">activPINPADAutoservicioMDCS</paso>
+					<paso id="0">activPINPADAutoservicio</paso>
+					<paso id="0">cancelPINPADAutoservicioMDCS</paso>
+					<paso id="0">cancelPINPADAutoservicio</paso>
+					<paso id="0">AT2100_BLIMPFIJ</paso>
+					<paso id="0">activPINPADAutoservicioMDCS</paso>
+					<paso id="0">activPINPADAutoservicio</paso>
+					<paso id="0">operaAutoservicioMDCS</paso>
+					<paso id="0">operaAutoservicio</paso>
+					<paso id="0">cancelPINPADAutoservicioMDCS</paso>
+					<paso id="0">cancelPINPADAutoservicio</paso>
+					<paso id="0">activPINPADAutoservicioMDCS</paso>
+					<paso id="0">activPINPADAutoservicio</paso>
+					<paso id="0">cancelPINPADAutoservicioMDCS</paso>
+					<paso id="0">cancelPINPADAutoservicio</paso>
+					<paso id="0">AT2100_BLCONFIMP</paso>
+					<paso id="0">AT0000_BLENV</paso>
+					<paso id="0">activPINPADAutoservicioMDCS</paso>
+					<paso id="0">activPINPADAutoservicio</paso>
+					<paso id="0">cancelPINPADAutoservicioMDCS</paso>
+					<paso id="0">cancelPINPADAutoservicio</paso>
+					<paso id="0">activPINPADAutoservicioMDCS</paso>
+					<paso id="0">activPINPADAutoservicio</paso>
+					<paso id="0">cancelPINPADAutoservicioMDCS</paso>
+					<paso id="0">cancelPINPADAutoservicio</paso>
+					<paso id="0">AT0000_BLSELREBU</paso>
+					<paso id="0">AT0000_BLMENSACTIV</paso>
+					<paso id="0">expulsaActivAutoservicioMDCS</paso>
+					<paso id="0">expulsaActivAutoservicio</paso>
+					<paso id="0">AT0000_NCFINACT</paso>
+					<paso id="0">operaAutoservicioMDCS</paso>
+					<paso id="0">operaAutoservicio</paso>
+					<paso id="0">AT0000_NCCUEBILL</paso>
+					<paso id="0">operaAutoservicioMDCS</paso>
+					<paso id="0">operaAutoservicio</paso>
+					<paso id="0">AT0000_BLENTBILL</paso>
+					<paso id="0">syncContadoresMDCS</paso>
+					<paso id="0">diarioAutoservicio</paso>
+					<paso id="0">AT0000_BLADIOS</paso>
+					<paso id="0">estadoAutoservicioMDCS</paso>
+					<paso id="0">estadoAutoservicio</paso>
+					<paso id="0">activPINPADAutoservicioMDCS</paso>
+					<paso id="0">activPINPADAutoservicio</paso>
+					<paso id="0">TrazaFin</paso>
+		</detalle>
+		<func>
+		</func>
+	</operation>
+	
+	<!-- definir la traza master MOVIL para Excel -->
+	<operation id="MOVIL" type="EXCEL">
+		<detalle>
+				<paso id="0">TrazaInicio</paso>
+				<paso id="1">AT0000_BLMENSACTIV</paso>
+				<paso id="2">AT0000_BLSELOPE</paso>
+				<paso id="3">AT2000_BLOPERTELEF</paso>
+				<paso id="4">AT0000_NCEVALEMV</paso>
+				<paso id="5">AT0000_BLMENSACTIV</paso>
+				<paso id="6">AT0000_BLMASOPER</paso>
+				<paso id="7">AT0000_NCFINACT</paso>
+				<paso id="8">AT0000_BLADIOS</paso>
+				<paso id="9">TrazaFin</paso>
+		</detalle>
+		<func>
+		</func>
+	</operation>
+	
+	<!-- definir la traza master DEPOSITO_EFECTIVO_CHEQUES para Excel -->
+	<operation id="DEPOSITO_EFECTIVO_CHEQUES" type="EXCEL">
+		<detalle>
+			 <paso id="0">TrazaInicio</paso>
+			 <paso id="1">AT0000_BLMENSACTIV</paso>
+			 <paso id="2">AT2500_BLSELTIPING</paso>
+			 <paso id="3">AT0000_BLMENSACTIV</paso>
+			 <paso id="4">AT0000_BLMENSACTIV</paso>
+			 <paso id="5">AT0000_BLADIOS</paso>
+			 <paso id="6">TrazaFin</paso>
+		</detalle>
+		<func>
+		</func>
+	</operation>
+	
+	<operation id="CONSULTA_SALDO" type="EXCEL">
+		<detalle>
+			<paso id="0">TrazaInicio</paso>
+			<paso id="1">AT0000_BLMENSACTIV</paso>
+			<paso id="2">AT0000_BLPIN</paso>
+			<paso id="3">AT0000_BLSELOPE</paso>
+			<paso id="4">AT0000_BLENV</paso>
+			<paso id="5">AT2200_BLREDISP</paso>
+			<paso id="6">AT0000_BLMASOPER</paso>
+			<paso id="7">AT0000_BLMENSACTIV</paso>
+			<paso id="8">AT0000_NCFINACT</paso>
+			<paso id="9">AT0000_BLADIOS</paso>
+			<paso id="10">TrazaFin</paso>
+		</detalle>
+		<func>
+		</func>
+	</operation>
+		
+	<!-- definir la traza master MOVIMIENTOS para Excel -->
+	<operation id="MOVIMIENTOS" type="EXCEL">
+		<detalle>
+			<paso id="0">PASO1</paso>
+			<paso id="1">PASO2</paso>
+			<paso id="2">PASO3</paso>
+		</detalle>
+		<func>
+			<paso id="0">PASO1</paso>
+			<paso id="1">PASO2</paso>
+			<paso id="2">PASO3</paso>
+		</func>
+	</operation>
+	
+</tracesOutput>

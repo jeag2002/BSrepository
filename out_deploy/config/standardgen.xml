@@ -1,0 +1,17 @@
+<!--
+Ejemplo de filtro General. Uso solo para entornos de desarrollo
+-->
+<samplingConfig>
+	<samplingOpe>
+		<operation id="GEN_OPE">
+			<traza>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.leeActivAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\sIN$</traza>
+		</operation>
+	</samplingOpe>
+	<samplingActions>
+		<sampling id="diarioAutoservicio">
+			<base>\[([^\]]+)\]\s([A-Z|]+)\sCBSCashDispenserDriver.diarioAutoservicio\[([L:0-9]+)\]\s\s.\s--> \[STATE=OPERATING\]\s\s</base>
+			<ini>IN$</ini>
+			<fin>OUT$</fin>
+		</sampling>
+	</samplingActions>
+</samplingConfig>
